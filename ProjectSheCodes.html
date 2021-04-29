@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelLove</title>
+    <style>
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 15px 60px;
+      }
+      body {
+        background: linear-gradient(#00c9d1, #005393);
+      }
+      h1,
+      h2 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 25px;
+      }
+      hr {
+        height: 1px;
+        background-color: #cbc6a1;
+        border: none;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      p {
+        color: white;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 20px;
+        margin: 15px 0 0 0;
+      }
+      .footer {
+        font-family: monospace;
+        text-align: center;
+        font-size: 14px;
+        opacity: 0.7;
+      }
+      a {
+        display: inline-block;
+        font-size: 14px;
+        display: inline;
+        color: #00c9d1;
+      }
+
+      .see_list {
+        float: right;
+      }
+      .type {
+        font-weight: 600;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 20px 30px;
+        font-size: 18px;
+        background-color: #00c9d1;
+        color: #005393;
+        border: 3px solid #00c9d1;
+        border-radius: 15px;
+        transition: all 200ms ease-in-out;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+      }
+      button:hover {
+        background-color: transparent;
+        color: #00c9d1;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Travel Blog 🏝</h1>
+      <h2>My Favourite Countries to travel to</h2>
+      <hr />
+      <img
+        src="https://static.asiawebdirect.com/m/phuket/portals/phiphi-phuket-com/shared/teasersL/phiphi-viewpoint/teaserMultiLarge/imageHilight/teaser.jpeg.jpg"
+        alt="phi phi viewpoint"
+      />
+      <hr />
+      <p>
+        After finishing University, my boyfriend and I spent a few months
+        travelling around <strong> South East Asia</strong>. We loved every
+        minute and learned about the most incredible cultures, histories and
+        traditions.
+        <br />
+        For example, did you know Indonesia alone has over 15'000 islands!! The
+        crazy this is though, that <em> nearly 20% </em>of the whole South East
+        Asian population live on just one of those islands, its called Java and
+        has a population of over 140 million.
+      </p>
+
+      <a
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Southeast_Asia_%28orthographic_projection%29.svg/1200px-Southeast_Asia_%28orthographic_projection%29.svg.png"
+        target="_blank"
+        class="see_map"
+      >
+        See Southeast Asian countries on a <span class="type"> map </span>🌏
+      </a>
+
+      <a
+        href="https://www.niu.edu/clas/cseas/resources/countries.shtml"
+        target="_blank"
+        class="see_list"
+        >See a <span class="type"> list</span> of Southeast Asian countries 📝
+      </a>
+      <button>I want to go to Asia!</button>
+      <p class="footer">coded by laura b</p>
+    </div>
+    <script>
+      function updateH2(newH2) {
+        H2 = document.querySelector("h2");
+        H2.innerHTML = newH2;
+      }
+
+      function ask() {
+        alert("Thanks for visiting my page!");
+        let name = prompt("What is your name?");
+        let country = prompt(
+          "What South East Asian Country would you like to visit?"
+        );
+        country = country.toLowerCase();
+        visited = ["indonesia", "vietnam", "cambodia", "bali", "thailand"];
+        if (visited.includes(country)) {
+          updateH2(`Hey ${name}, I love ${country}! Would you like some tips?`);
+        } else {
+          updateH2(
+            `Hey ${name}, I haven't been to ${country} 😢 Let me know how it is!`
+          );
+        }
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+      }
+      let button = document.querySelector("button");
+      button.addEventListener("click", ask);
+    </script>
+  </body>
+</html>
